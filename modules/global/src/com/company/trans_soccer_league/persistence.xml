@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<persistence xmlns="http://java.sun.com/xml/ns/persistence" version="2.0">
+    <persistence-unit name="transsoccerleague" transaction-type="RESOURCE_LOCAL">
+
+        <class>com.company.trans_soccer_league.entity.Team</class>
+        <class>com.company.trans_soccer_league.entity.Fixture</class>
+        <class>com.company.trans_soccer_league.entity.LogTable</class>
+    </persistence-unit>
+</persistence>

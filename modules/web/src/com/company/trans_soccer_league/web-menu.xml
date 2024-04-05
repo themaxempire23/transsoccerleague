@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<menu-config xmlns="http://schemas.haulmont.com/cuba/menu.xsd">
+    <menu id="application-transsoccerleague" insertBefore="administration" caption="mainMsg://menu_config.application-transsoccerleague">
+        <item screen="transsoccerleague_Team.browse" caption="mainMsg://menu_config.transsoccerleague_Team.browse"/>
+        <item screen="transsoccerleague_Fixture.browse"
+              caption="mainMsg://menu_config.transsoccerleague_Fixture.browse"/>
+        <item screen="transsoccerleague_LogTable.browse"
+              caption="mainMsg://menu_config.transsoccerleague_LogTable.browse"/>
+    </menu>
+</menu-config>

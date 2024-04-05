@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/screen/window.xsd"
+        xmlns:c="http://schemas.haulmont.com/cuba/screen/jpql_condition.xsd"
+        caption="msg://logTableBrowse.caption"
+        focusComponent="logTablesTable"
+        messagesPack="com.company.trans_soccer_league.web.screens.logtable">
+    <data readOnly="true">
+        <collection id="logTablesDc"
+                    class="com.company.trans_soccer_league.entity.LogTable">
+            <view extends="_local">
+                <property name="teamName" view="_minimal"/>
+            </view>
+            <loader id="logTablesDl">
+                <query>
+                    <![CDATA[select e from transsoccerleague_LogTable e]]>
+                </query>
+            </loader>
+        </collection>
+    </data>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="logTablesTable"
+            spacing="true">
+        <filter id="filter"
+                applyTo="logTablesTable"
+                dataLoader="logTablesDl">
+            <properties include=".*"/>
+        </filter>
+        <groupTable id="logTablesTable"
+                    width="100%"
+                    dataContainer="logTablesDc">
+            <actions>
+                <action id="create" type="create"/>
+            </actions>
+            <columns>
+                <column id="teamName"/>
+                <column id="wins"/>
+                <column id="losses"/>
+                <column id="draws"/>
+                <column id="goalsFor"/>
+                <column id="goalDifference"/>
+                <column id="goalsAgainst"/>
+                <column id="position"/>
+                <column id="points"/>
+            </columns>
+            <rowsCount/>
+            <buttonsPanel id="buttonsPanel"
+                          alwaysVisible="true">
+                <button id="createBtn" action="logTablesTable.create"/>
+                <button caption="Update Log Table" invoke="onUpdateLogTableClick"/>
+
+
+            </buttonsPanel>
+        </groupTable>
+        <hbox id="lookupActions" spacing="true" visible="false">
+            <button action="lookupSelectAction"/>
+            <button action="lookupCancelAction"/>
+        </hbox>
+    </layout>
+</window>
